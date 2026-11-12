@@ -1,6 +1,6 @@
 # MASTER: raygent landing page design system (v2)
 
-Single source of truth for `site-web/`. Every colour, size, radius and
+Single source of truth for this repo. Every colour, size, radius and
 duration in the site comes from a token here, mirrored in `src/styles.css`
 (`@theme`). The dashboard keeps its own system in the root `DESIGN.md`.
 

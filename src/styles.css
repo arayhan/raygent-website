@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Tokens mirror site-web/MASTER.md. Nothing below may use a value that is
+/* Tokens mirror MASTER.md. Nothing below may use a value that is
    not one of these. */
 @theme {
   --color-void: #0a0d12;
