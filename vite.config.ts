@@ -8,12 +8,12 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root: here,
-  // GitHub Pages serves the project site under /raygent/.
-  base: '/raygent/',
+  // GitHub Pages serves this project site under /raygent-website/.
+  base: '/raygent-website/',
   plugins: [react(), tailwindcss()],
   build: {
-    // Outside package.json "files", so the site never ships with the CLI.
-    outDir: path.resolve(here, '..', 'dist-site'),
+    // Resolved against root, so it lands in this repo whatever the cwd.
+    outDir: 'dist',
     emptyOutDir: true,
   },
 });
