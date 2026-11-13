@@ -3,6 +3,9 @@ name: Deploy landing page
 on:
   push:
     branches: [main]
+  # The guides live in arayhan/raygent; a daily build picks up their changes.
+  schedule:
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: arayhan/raygent
+          path: _raygent
+          sparse-checkout: docs
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -26,6 +34,8 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run build
+        env:
+          RAYGENT_DOCS_DIR: _raygent/docs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
