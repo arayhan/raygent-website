@@ -3,7 +3,7 @@ import { CommandChip } from '../components/CommandChip';
 import { INSTALL_COMMAND, LINKS } from '../content/links';
 import { useReveal } from '../motion/useReveal';
 import { Icon } from '../components/Icon';
-import { BookOpen, Download, ListTree, Puzzle, SquareTerminal } from 'lucide-react';
+import { BookOpen, Download, LibraryBig, ListTree, Puzzle, SquareTerminal } from 'lucide-react';
 import { useT } from '../i18n/LanguageProvider';
 
 export function Docs() {
@@ -51,6 +51,10 @@ export function Docs() {
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end" data-reveal>
           <p className="prose-measure m-0 text-signal-dim">{t.docs.skip}</p>
           <nav aria-label={t.docs.navLabel} className="flex flex-wrap gap-3">
+            <a href={LINKS.guides} className="btn btn-ghost">
+              <Icon as={LibraryBig} size={18} />
+              {t.docs.guides}
+            </a>
             <a href={LINKS.tutorial} className="btn btn-ghost" target="_blank" rel="noreferrer">
               <Icon as={BookOpen} size={18} />
               {t.docs.tutorial}

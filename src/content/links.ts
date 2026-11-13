@@ -7,6 +7,8 @@ export const LINKS = {
   license: 'https://github.com/arayhan/raygent/blob/main/LICENSE',
   author: 'https://github.com/arayhan',
   saweria: 'https://saweria.co/arayhan',
+  /** The docs pages of this site, rendered from raygent/docs. */
+  guides: `${import.meta.env.BASE_URL}docs/`,
 } as const;
 
 export const INSTALL_COMMAND = 'npm install -g raygent';
