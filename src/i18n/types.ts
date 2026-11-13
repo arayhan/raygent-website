@@ -83,7 +83,9 @@ export interface Dict {
     navLabel: string;
     tutorial: string;
     reference: string;
+    guides: string;
   };
+  docsPage: { title: string; navLabel: string; guides: string; edit: string };
   examples: {
     eyebrow: string;
     title: string;

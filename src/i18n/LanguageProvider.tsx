@@ -33,16 +33,18 @@ interface LanguageContext {
 
 const Ctx = createContext<LanguageContext>({ lang: 'en', setLang: () => {}, t: en });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
+/** manageMeta=false leaves title and description to the page (the docs page names the guide). */
+export function LanguageProvider({ children, manageMeta = true }: { children: ReactNode; manageMeta?: boolean }) {
   const [lang, setLangState] = useState<Lang>(detectLang);
   const t = DICTS[lang];
 
   // Keep the document in step: lang attribute, title and description.
   useEffect(() => {
     document.documentElement.lang = lang;
+    if (!manageMeta) return;
     document.title = t.meta.title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description);
-  }, [lang, t]);
+  }, [lang, t, manageMeta]);
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next);

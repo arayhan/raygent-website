@@ -12,7 +12,8 @@ const NAV = [
   { href: '#examples', key: 'examples' },
 ] as const;
 
-export function Header() {
+/** `home` prefixes every in-page link, so the docs page can point back at the landing sections. */
+export function Header({ home = '' }: { home?: string }) {
   const t = useT();
   return (
     <header
@@ -20,7 +21,7 @@ export function Header() {
       style={{ top: 'env(safe-area-inset-top, 0px)' }}
     >
       <div className="mx-auto flex max-w-(--container-page) items-center justify-between gap-6 py-4">
-        <a href="#top" className="flex items-center gap-3 no-underline" aria-label={t.ui.backToTop}>
+        <a href={`${home}#top`} className="flex items-center gap-3 no-underline" aria-label={t.ui.backToTop}>
           <RingMark size={28} />
           <span className="font-display text-[22px] font-semibold tracking-[-0.01em]">raygent</span>
         </a>
@@ -28,7 +29,7 @@ export function Header() {
           <ul className="m-0 flex list-none gap-7 p-0">
             {NAV.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="link-sweep label inline-block py-2 hover:text-signal-white">
+                <a href={home + item.href} className="link-sweep label inline-block py-2 hover:text-signal-white">
                   {t.nav[item.key]}
                 </a>
               </li>

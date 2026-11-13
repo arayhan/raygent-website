@@ -191,7 +191,9 @@ export const id: Dict = {
     navLabel: 'Dokumentasi',
     tutorial: 'Tutorial',
     reference: 'Daftar perintah',
+    guides: 'Semua panduan',
   },
+  docsPage: { title: 'Dokumentasi raygent', navLabel: 'Panduan', guides: 'Panduan', edit: 'Ubah halaman ini di GitHub' },
   examples: {
     eyebrow: 'Contoh',
     title: 'Satu kalimat, atau satu perintah',

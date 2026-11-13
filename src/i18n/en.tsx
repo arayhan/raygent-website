@@ -191,7 +191,9 @@ export const en: Dict = {
     navLabel: 'Documentation',
     tutorial: 'Tutorial',
     reference: 'Command reference',
+    guides: 'All guides',
   },
+  docsPage: { title: 'raygent docs', navLabel: 'Guides', guides: 'Guides', edit: 'Edit this page on GitHub' },
   examples: {
     eyebrow: 'Examples',
     title: 'One sentence to your agent, or one command',
