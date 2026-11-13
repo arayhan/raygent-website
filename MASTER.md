@@ -234,3 +234,23 @@ English is the default; Indonesian (`id`) is the second language.
   writes `?lang=id` or removes `?lang` for English, and sets `<html lang>`,
   the title and the description. Text re-renders; the canvases do not remount.
 
+
+## Docs pages
+
+`docs/index.html` is a second entry: one guide per raygent service, rendered at
+build time from the markdown in `arayhan/raygent` (`docs/en`, `docs/id`; locally
+`../raygent/docs`, or `RAYGENT_DOCS_DIR`). The hash picks the guide
+(`docs/#sync`), so GitHub Pages needs no fallback route.
+
+- **Tokens**: the same as the landing page. Blue keeps its one role: links in
+  the article and the 1px left rule on the current guide in the sidebar.
+- **Layout**: a 200px sidebar and a `minmax(0,1fr)` article column, the
+  article capped at 72ch; at phone width the sidebar becomes a `<select>`.
+  Code blocks and tables scroll inside themselves, never the page.
+- **Background**: plain void, no light or particle field; this is a page for
+  reading.
+- **Language**: the Indonesian guides keep "kamu" but use a plainer register
+  than the landing copy (tidak, sudah), because they are reference text read
+  while typing commands.
+- **Build check**: a guide present in one language and missing in the other
+  fails the build.
