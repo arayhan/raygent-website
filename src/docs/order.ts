@@ -9,6 +9,7 @@ export const DOC_ORDER = [
   'dashboard',
   'accounts',
   'sync',
+  'hub',
   'doctor',
   'orca',
 ];
